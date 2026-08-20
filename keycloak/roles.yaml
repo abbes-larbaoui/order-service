@@ -11,4 +11,4 @@ roles:
       - name: ORDER_ADMIN
         description: Administrator for all order operations
       - name: ORDER_TEST_GITOPS
-        description: Test GitOps for order service
+        description: Test GitOps for order service test description update
