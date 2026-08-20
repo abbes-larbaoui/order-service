@@ -10,3 +10,5 @@ roles:
         description: Permission to view order details
       - name: ORDER_ADMIN
         description: Administrator for all order operations
+      - name: ALNUSAIF_ROLE
+        description: Full access
