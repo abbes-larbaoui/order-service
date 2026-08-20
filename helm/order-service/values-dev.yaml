@@ -1,0 +1,3 @@
+﻿keycloakConfig:
+  variables:
+    APP_URL: "http://order-service-dev.company.local"

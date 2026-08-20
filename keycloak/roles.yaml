@@ -1,0 +1,12 @@
+﻿realm: company
+roles:
+  client:
+    order-service:
+      - name: ORDER_CREATE
+        description: Permission to create new orders
+      - name: ORDER_CANCEL
+        description: Permission to cancel existing orders
+      - name: ORDER_VIEW
+        description: Permission to view order details
+      - name: ORDER_ADMIN
+        description: Administrator for all order operations

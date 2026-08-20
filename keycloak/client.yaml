@@ -1,0 +1,17 @@
+﻿realm: company
+clients:
+  - clientId: order-service
+    name: Order Management Service
+    description: Microservice for processing and querying customer orders
+    enabled: true
+    protocol: openid-connect
+    publicClient: false
+    secret: order-service-secret-local
+    standardFlowEnabled: true
+    directAccessGrantsEnabled: true
+    serviceAccountsEnabled: true
+    redirectUris:
+      - "http://localhost:30082/*"
+      - "http://127.0.0.1:30082/*"
+    webOrigins:
+      - "+"

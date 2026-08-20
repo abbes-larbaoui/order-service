@@ -1,0 +1,37 @@
+﻿apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: order-service
+  namespace: argocd
+spec:
+  project: applications
+  sources:
+    # Source 1: Deploy Application Helm Chart
+    - repoURL: https://git.company.com/apps/order-service.git
+      targetRevision: main
+      path: helm/order-service
+
+    # Source 2: Run Central Keycloak Config CLI Chart
+    - repoURL: https://git.company.com/platform/company-helm-charts.git
+      targetRevision: main
+      path: keycloak-config-cli
+      helm:
+        values: |
+          appName: order-service
+          keycloak:
+            url: "http://keycloak.keycloak.svc.cluster.local:8080"
+          config:
+            realm: "company"
+
+    # Source 3: Reference to Application Keycloak Config Files
+    - repoURL: https://git.company.com/apps/order-service.git
+      targetRevision: main
+      ref: app-repo
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
