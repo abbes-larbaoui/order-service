@@ -12,3 +12,5 @@ roles:
         description: Administrator for all order operations
       - name: ALNUSAIF_ROLE
         description: Full access
+      - name: ANI_ROLE
+        description: Full access
